@@ -1,0 +1,9 @@
+# Build
+/_bin/*
+/_obj/*
+
+# VS packages
+/packages/*
+
+# VS
+/.vs/*

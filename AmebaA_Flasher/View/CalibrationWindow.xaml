@@ -1,0 +1,24 @@
+﻿<Window x:Class="AmebaA_Flasher.View.CalibrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AmebaA_Flasher.View"
+        xmlns:localconv="clr-namespace:Ameba.Common.Converters;assembly=Ameba.Common"
+        mc:Ignorable="d"
+        Title="Calibration"
+        Height="110"
+        Width="180"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <localconv:ByteArrayToMACStringConverter x:Key="byteArrayToMACStringConverter"/>
+    </Window.Resources>
+    <StackPanel Orientation="Vertical">
+        <TextBlock Text="New MAC:"/>
+        <TextBox Text="{Binding RTL.MAC, Converter={StaticResource byteArrayToMACStringConverter}}"
+                 Width="176"
+                 IsReadOnly="False"/>
+        <Button Content="OK" Click="Button_Click"/>
+    </StackPanel>
+</Window>
